@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseLayout(
+        showFloatingActionButton: true,
         appBarTitle: '홈',
         isAppbarIconNeeded: true,
         child: Column(

@@ -10,6 +10,7 @@ class StoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const BaseLayout(
+        showFloatingActionButton: false,
         appBarTitle: '스토어',
         isAppbarIconNeeded: true,
         child: Center(

@@ -10,6 +10,7 @@ class MyPageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const BaseLayout(
+        showFloatingActionButton: false,
         appBarTitle: '마이페이지',
         isAppbarIconNeeded: true,
         child: Center(

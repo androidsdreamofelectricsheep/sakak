@@ -86,8 +86,9 @@ class MyPageScreen extends StatelessWidget {
                       itemCount: myPageButtonList[index]['buttons'].length,
                       itemBuilder: (context, i) => GestureDetector(
                           onTap: () {
-                            context.pushNamed(
-                                myPageButtonList[index]['buttons'][i]['link']);
+                            // 예시
+                            // context.pushNamed(
+                            //     myPageButtonList[index]['buttons'][i]['link']);
                           },
                           child: Text(
                             myPageButtonList[index]['buttons'][i]['button'],
@@ -96,14 +97,14 @@ class MyPageScreen extends StatelessWidget {
                                 .titleMedium!
                                 .copyWith(fontWeight: FontWeight.w500),
                           )),
-                      separatorBuilder: (context, i) => const SizedBox(
-                        height: 8,
+                      separatorBuilder: (context, i) => SizedBox(
+                        height: 8.w,
                       ),
                     )
                   ],
                 ),
-                separatorBuilder: (context, index) => const SizedBox(
-                  height: 15,
+                separatorBuilder: (context, index) => SizedBox(
+                  height: 15.w,
                 ),
               ),
             ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:go_router/go_router.dart';
 import 'package:sakak/core/constants/constants.dart';
 import 'package:sakak/views/layout/base_layout.dart';
@@ -42,58 +42,54 @@ class MyPageScreen extends StatelessWidget {
             ),
             SizedBox(
               height: 50,
-              child: Expanded(
-                child: ListView.separated(
-                  separatorBuilder: (context, index) => const SizedBox(
-                    width: 80,
-                  ),
-                  physics: const NeverScrollableScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemCount: myInfoList.length,
-                  itemBuilder: (context, index) => Column(
-                    children: [
-                      Icon(myInfoList[index]['icon']),
-                      Text(myInfoList[index]['menu'])
-                    ],
-                  ),
+              child: ListView.separated(
+                separatorBuilder: (context, index) => const SizedBox(
+                  width: 80,
+                ),
+                physics: const NeverScrollableScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemCount: myInfoList.length,
+                itemBuilder: (context, index) => Column(
+                  children: [
+                    Icon(myInfoList[index]['icon']),
+                    Text(myInfoList[index]['menu'])
+                  ],
                 ),
               ),
             ),
             const SizedBox(
               height: 40,
             ),
-            Expanded(
-              child: ListView.separated(
-                shrinkWrap: true,
-                itemCount: myPageButtonList.length,
-                itemBuilder: (context, index) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(myPageButtonList[index]['category']),
-                    const SizedBox(
-                      height: 10,
+            ListView.separated(
+              shrinkWrap: true,
+              itemCount: myPageButtonList.length,
+              itemBuilder: (context, index) => Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(myPageButtonList[index]['category']),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ListView.separated(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: myPageButtonList[index]['buttons'].length,
+                    itemBuilder: (context, i) => GestureDetector(
+                        onTap: () {
+                          context.pushNamed(
+                              myPageButtonList[index]['buttons'][i]['link']);
+                        },
+                        child: Text(
+                            myPageButtonList[index]['buttons'][i]['button'])),
+                    separatorBuilder: (context, i) => const SizedBox(
+                      height: 8,
                     ),
-                    ListView.separated(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: myPageButtonList[index]['buttons'].length,
-                      itemBuilder: (context, i) => GestureDetector(
-                          onTap: () {
-                            context.pushNamed(
-                                myPageButtonList[index]['buttons'][i]['link']);
-                          },
-                          child: Text(
-                              myPageButtonList[index]['buttons'][i]['button'])),
-                      separatorBuilder: (context, i) => const SizedBox(
-                        height: 8,
-                      ),
-                    )
-                  ],
-                ),
-                separatorBuilder: (context, index) => const SizedBox(
-                  height: 15,
-                ),
+                  )
+                ],
+              ),
+              separatorBuilder: (context, index) => const SizedBox(
+                height: 15,
               ),
             ),
             TextButton(onPressed: () {}, child: const Text('로그아웃')),

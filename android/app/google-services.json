@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "836343031759",
+    "project_id": "sakak-35ee7",
+    "storage_bucket": "sakak-35ee7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836343031759:android:4f3f36dca77f292ed6d4ba",
+        "android_client_info": {
+          "package_name": "com.example.sakak"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEB3iDf-dMRCu4dkxOs2i9cFe7Y7HL24M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

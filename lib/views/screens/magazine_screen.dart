@@ -30,7 +30,7 @@ class MagazineScreen extends StatelessWidget {
               height: 20,
             ),
             Container(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
                 color: Colors.blueGrey.shade50,
                 borderRadius: const BorderRadius.all(Radius.circular(10)),

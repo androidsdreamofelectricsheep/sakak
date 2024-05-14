@@ -60,3 +60,44 @@ const List<Map<String, String>> recommendedContentsList = [
         'https://cdn.pixabay.com/photo/2023/08/18/15/02/cat-8198720_1280.jpg'
   },
 ];
+
+const List<Map<String, dynamic>> myInfoList = [
+  {
+    "menu": '찜 리스트',
+    "icon": Icons.favorite_border_outlined,
+  },
+  {
+    "menu": '내 쿠폰함',
+    "icon": Icons.card_giftcard_outlined,
+  },
+  {
+    "menu": '내 적립금',
+    "icon": Icons.monetization_on_outlined,
+  },
+];
+
+const List<Map<String, dynamic>> myPageButtonList = [
+  {
+    "category": "My 쇼핑",
+    'buttons': [
+      {'button': '주문 내역', 'link': ''},
+      {'button': '취소/반품/교환/환불 내역', 'link': ''},
+      {'button': '멤버십 관리', 'link': ''}
+    ]
+  },
+  {
+    "category": "My 혜택",
+    'buttons': [
+      {'button': '멤버십 혜택', 'link': ''},
+      {'button': '적립금 교환', 'link': ''},
+    ]
+  },
+  {
+    "category": "My 활동",
+    'buttons': [
+      {'button': '문의하기', 'link': ''},
+      {'button': '문의내역 확인', 'link': ''},
+      {'button': '리뷰 관리', 'link': ''}
+    ]
+  },
+];

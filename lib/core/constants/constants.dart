@@ -101,3 +101,6 @@ const List<Map<String, dynamic>> myPageButtonList = [
     ]
   },
 ];
+
+const collectionName = 'sakak';
+const productDoc = 'product';

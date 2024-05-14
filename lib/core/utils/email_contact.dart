@@ -1,3 +1,4 @@
+import 'package:sakak/core/utils/logger.dart';
 import 'package:url_launcher/url_launcher.dart' as launcher;
 
 emailContact() async {
@@ -8,6 +9,6 @@ emailContact() async {
   try {
     await launcher.launchUrl(uri);
   } catch (e) {
-    print(e);
+    logger.e('email contact failed to luanch', error: e);
   }
 }

@@ -18,6 +18,9 @@ class HomeScreen extends StatelessWidget {
         isAppbarIconNeeded: true,
         child: Column(
           children: [
+            const SizedBox(
+              height: 20,
+            ),
             const CarouselBannerWidget(),
             const SizedBox(
               height: 15,

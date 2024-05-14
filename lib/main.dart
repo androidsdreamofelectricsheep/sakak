@@ -33,9 +33,10 @@ class _SakakState extends State<Sakak> {
     return MaterialApp.router(
       theme: ThemeData(
           useMaterial3: true,
+          colorSchemeSeed: Colors.blueGrey.shade50,
           appBarTheme: const AppBarTheme(
             foregroundColor: Colors.black,
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.black12,
             surfaceTintColor: Colors.white,
             elevation: 0,
             titleTextStyle: TextStyle(

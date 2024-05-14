@@ -21,7 +21,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
+      designSize: const Size(360, 800),
       child: MaterialApp(
         title: 'Sakak',
         theme: ThemeData(

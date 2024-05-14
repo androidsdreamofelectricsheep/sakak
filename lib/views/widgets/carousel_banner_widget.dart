@@ -49,13 +49,13 @@ class _CarouselBannerWidgetState extends State<CarouselBannerWidget> {
               child: Container(
                 width: 12.w,
                 height: 12.w,
-                margin: EdgeInsets.symmetric(vertical: 8.w, horizontal: 4.w),
+                margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: (Theme.of(context).brightness == Brightness.dark
                             ? Colors.white
                             : Colors.black)
-                        .withOpacity(_current == entry.key ? 0.9.w : 0.4.w)),
+                        .withOpacity(_current == entry.key ? 0.9 : 0.4)),
               ),
             );
           }).toList(),

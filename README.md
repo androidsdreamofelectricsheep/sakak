@@ -1,16 +1,30 @@
 # sakak
 
-A new Flutter project.
+## 알고리즘
 
-## Getting Started
+[풀이 링크](https://alabaster-caravel-721.notion.site/1-71cb82b8685744d2838f3f911c9b6765?pvs=4)
 
-This project is a starting point for a Flutter application.
+## Cloud Firestore 설정
 
-A few resources to get you started if this is your first Flutter project:
+<img src="assets/firestore.png">
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 시작하기
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+클론:
+
+```
+git clone https://github.com/androidsdreamofelectricsheep/sakak.git
+```
+
+설치:
+
+```
+$ cd sakak
+$ flutter pub get
+```
+
+앱 실행:
+
+```
+$ flutter run
+```

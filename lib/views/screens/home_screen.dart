@@ -28,6 +28,7 @@ class HomeScreen extends StatelessWidget {
             ),
             GridView.builder(
                 shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 200,
                     childAspectRatio: 2 / 1, // 2(가로) / 1(세로) 비율

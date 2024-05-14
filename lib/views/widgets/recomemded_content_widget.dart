@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RecommendedContentWidget extends StatelessWidget {
   final String heading, content, imgUrl;
@@ -12,20 +13,20 @@ class RecommendedContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(bottom: 10).w,
       child: Row(
         children: [
           Container(
             decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
-                borderRadius: const BorderRadius.all(Radius.circular(5)),
+                borderRadius: const BorderRadius.all(Radius.circular(5)).w,
                 image: DecorationImage(
                     image: NetworkImage(imgUrl), fit: BoxFit.cover)),
-            width: 60,
-            height: 60,
+            width: 60.w,
+            height: 60.w,
           ),
-          const SizedBox(
-            width: 10,
+          SizedBox(
+            width: 10.w,
           ),
           Expanded(
               child: Column(
@@ -35,6 +36,10 @@ class RecommendedContentWidget extends StatelessWidget {
               Text(
                 heading,
                 overflow: TextOverflow.ellipsis,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(fontWeight: FontWeight.w800),
               ),
               Text(content)
             ],

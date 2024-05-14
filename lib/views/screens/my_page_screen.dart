@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:sakak/core/constants/constants.dart';
@@ -28,23 +29,23 @@ class MyPageScreen extends StatelessWidget {
                           image: NetworkImage(
                               'https://cdn.pixabay.com/photo/2024/04/12/15/46/beautiful-8692180_1280.png'),
                           fit: BoxFit.cover)),
-                  width: 100,
-                  height: 100,
+                  width: 100.w,
+                  height: 100.w,
                 ),
-                const SizedBox(
-                  width: 20,
+                SizedBox(
+                  width: 20.w,
                 ),
-                const Text('강성윤')
+                Text('강성윤', style: Theme.of(context).textTheme.titleLarge)
               ],
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 20.w,
             ),
             SizedBox(
-              height: 50,
+              height: 50.w,
               child: ListView.separated(
-                separatorBuilder: (context, index) => const SizedBox(
-                  width: 80,
+                separatorBuilder: (context, index) => SizedBox(
+                  width: 80.w,
                 ),
                 physics: const NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.horizontal,
@@ -53,46 +54,65 @@ class MyPageScreen extends StatelessWidget {
                 itemBuilder: (context, index) => Column(
                   children: [
                     Icon(myInfoList[index]['icon']),
-                    Text(myInfoList[index]['menu'])
+                    Text(myInfoList[index]['menu'],
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(fontWeight: FontWeight.w400))
                   ],
                 ),
               ),
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: 40.w,
             ),
-            ListView.separated(
-              shrinkWrap: true,
-              itemCount: myPageButtonList.length,
-              itemBuilder: (context, index) => Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(myPageButtonList[index]['category']),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  ListView.separated(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: myPageButtonList[index]['buttons'].length,
-                    itemBuilder: (context, i) => GestureDetector(
-                        onTap: () {
-                          context.pushNamed(
-                              myPageButtonList[index]['buttons'][i]['link']);
-                        },
-                        child: Text(
-                            myPageButtonList[index]['buttons'][i]['button'])),
-                    separatorBuilder: (context, i) => const SizedBox(
-                      height: 8,
+            Expanded(
+              child: ListView.separated(
+                shrinkWrap: true,
+                itemCount: myPageButtonList.length,
+                itemBuilder: (context, index) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      myPageButtonList[index]['category'],
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
-                  )
-                ],
-              ),
-              separatorBuilder: (context, index) => const SizedBox(
-                height: 15,
+                    SizedBox(
+                      height: 10.w,
+                    ),
+                    ListView.separated(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: myPageButtonList[index]['buttons'].length,
+                      itemBuilder: (context, i) => GestureDetector(
+                          onTap: () {
+                            context.pushNamed(
+                                myPageButtonList[index]['buttons'][i]['link']);
+                          },
+                          child: Text(
+                            myPageButtonList[index]['buttons'][i]['button'],
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(fontWeight: FontWeight.w500),
+                          )),
+                      separatorBuilder: (context, i) => const SizedBox(
+                        height: 8,
+                      ),
+                    )
+                  ],
+                ),
+                separatorBuilder: (context, index) => const SizedBox(
+                  height: 15,
+                ),
               ),
             ),
-            TextButton(onPressed: () {}, child: const Text('로그아웃')),
+            TextButton(
+                onPressed: () {},
+                child: const Text(
+                  '로그아웃',
+                  style: TextStyle(color: Colors.red),
+                )),
           ],
         ));
   }

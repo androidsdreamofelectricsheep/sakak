@@ -20,6 +20,8 @@ class StoreProductCardWidget extends StatelessWidget {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             decoration: BoxDecoration(
@@ -36,27 +38,48 @@ class StoreProductCardWidget extends StatelessWidget {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   name,
                   overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontWeight: FontWeight.w300),
                 ),
-                Text(delivery),
+                Text(
+                  delivery,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
                 Text(
                   price,
-                  style:
-                      const TextStyle(decoration: TextDecoration.lineThrough),
+                  style: TextStyle(
+                      color: Colors.grey.shade500,
+                      decoration: TextDecoration.lineThrough,
+                      decorationColor: Colors.grey.shade800),
                 ),
                 SizedBox(
-                  height: 10.w,
+                  height: 7.w,
                 ),
                 RichText(
-                  text: const TextSpan(children: [
-                    TextSpan(text: '100%'),
-                    TextSpan(text: ' 0원'),
+                  text: TextSpan(children: [
+                    TextSpan(
+                        text: '100%',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(color: Colors.red)),
+                    TextSpan(
+                        text: ' 0원',
+                        style: Theme.of(context).textTheme.titleMedium),
                   ]),
                 ),
-                const Text('쿠폰 할인가')
+                Text('쿠폰 할인가',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(color: Colors.red))
               ],
             ),
           )

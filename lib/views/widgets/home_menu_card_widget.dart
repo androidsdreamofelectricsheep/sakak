@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeMenuCardWidget extends StatelessWidget {
   final String menu;
@@ -10,15 +11,15 @@ class HomeMenuCardWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.blueGrey.shade50,
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        borderRadius: const BorderRadius.all(Radius.circular(10)).w,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10).w,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(menu),
+            Text(menu, style: Theme.of(context).textTheme.titleLarge),
             Align(
               alignment: Alignment.bottomRight,
               child: Icon(icon),

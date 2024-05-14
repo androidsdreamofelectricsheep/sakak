@@ -11,6 +11,7 @@ class CarouselBannerCardWidget extends StatelessWidget {
       // decoration: BoxDecoration(border: Border.all()),
       child: Text(
         bannerText,
+        style: Theme.of(context).textTheme.titleMedium,
       ),
     );
   }

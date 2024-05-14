@@ -54,14 +54,25 @@ class _SakakState extends State<Sakak> {
             elevation: 0,
             titleTextStyle: TextStyle(
               color: Colors.black,
-              // fontSize: Sizes.size16 + Sizes.size2,
               fontWeight: FontWeight.w600,
             ),
           ),
           bottomNavigationBarTheme: const BottomNavigationBarThemeData(
               elevation: 0,
               unselectedItemColor: Colors.grey,
-              selectedItemColor: Colors.black)),
+              selectedItemColor: Colors.black),
+          textTheme: TextTheme(
+            titleLarge: TextStyle(
+                fontSize: 15.sp,
+                color: Colors.black,
+                fontWeight: FontWeight.w900),
+            titleMedium: TextStyle(
+                fontSize: 14.sp,
+                color: Colors.black,
+                fontWeight: FontWeight.w900),
+            bodySmall: TextStyle(fontSize: 10.sp),
+            bodyMedium: TextStyle(fontSize: 11.sp),
+          )),
       debugShowCheckedModeBanner: false,
       title: 'Sakak',
       routerConfig: router,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sakak/models/store/store.dart';
 import 'package:sakak/viewmodels/store/store_provider.dart';
 import 'package:sakak/views/layout/base_layout.dart';
@@ -31,7 +32,7 @@ class StoreScreen extends ConsumerWidget {
                     price: storeProduct.price,
                     imgUrl: storeProduct.imgUrl);
               },
-              separatorBuilder: (context, index) => const SizedBox(height: 10),
+              separatorBuilder: (context, index) => SizedBox(height: 10.w),
               itemCount: value.length),
           AsyncError() => const Text('Oops, something unexpected happened'),
           _ => const CircularProgressIndicator(),

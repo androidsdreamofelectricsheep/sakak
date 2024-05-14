@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sakak/core/constants/constants.dart';
 import 'package:sakak/views/layout/base_layout.dart';
 import 'package:sakak/views/widgets/carousel_banner_widget.dart';
@@ -18,20 +19,20 @@ class HomeScreen extends StatelessWidget {
         isAppbarIconNeeded: true,
         child: Column(
           children: [
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 20.w,
             ),
             const CarouselBannerWidget(),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: 15.w,
             ),
             GridView.builder(
                 shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 200,
                     childAspectRatio: 2 / 1, // 2(가로) / 1(세로) 비율
-                    crossAxisSpacing: 15,
-                    mainAxisSpacing: 15),
+                    crossAxisSpacing: 15.w,
+                    mainAxisSpacing: 15.w),
                 itemCount: homeMenuList.length,
                 itemBuilder: (context, index) => HomeMenuCardWidget(
                       menu: homeMenuList[index]['menu'],

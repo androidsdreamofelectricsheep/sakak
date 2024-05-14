@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sakak/core/constants/constants.dart';
 import 'package:sakak/views/layout/base_layout.dart';
 import 'package:sakak/views/widgets/recomemded_content_widget.dart';
@@ -19,30 +20,29 @@ class MagazineScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'What\'s New?',
-            ),
-            const SizedBox(
-              height: 10,
+            Text('What\'s New?', style: Theme.of(context).textTheme.titleLarge),
+            SizedBox(
+              height: 10.w,
             ),
             const VideoPlayerWidget(),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 20.w,
             ),
             Container(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15).w,
               decoration: BoxDecoration(
                 color: Colors.blueGrey.shade50,
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                borderRadius: const BorderRadius.all(Radius.circular(10)).w,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     '추천 컨텐츠',
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: 10.w,
                   ),
                   ListView.builder(
                       shrinkWrap: true,
